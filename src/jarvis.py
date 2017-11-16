@@ -93,6 +93,10 @@ def process_event(assistant, event):
         elif text == 'turn pump off':
             assistant.stop_conversation()
             power_off_pump()
+        elif text == 'test script':
+            assistant.stop_conversation()
+            subprocess.call('./testscript.sh', shell=True)
+            ()
 
     elif event.type == EventType.ON_END_OF_UTTERANCE:
         status_ui.status('thinking')
